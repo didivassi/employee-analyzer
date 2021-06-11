@@ -2,6 +2,8 @@ package academy.mindswap;
 
 import academy.mindswap.db.DB;
 
+import java.time.Year;
+
 
 public class Main {
 
@@ -9,7 +11,8 @@ public class Main {
 
         EmployeeAnalyzer analyzer = new EmployeeAnalyzer();
         //7
-        System.out.println(analyzer.countEmployeesByWorkAge(DB.getHrDepartment(), 2021, 4));
+        int year = Year.now().getValue();
+        System.out.println(analyzer.countEmployeesByWorkAge(DB.getHrDepartment(), year, 4));
         //Reina Hopkins
         System.out.println(analyzer.getEmployeesNameBySalaryAboveOrEqual(DB.getHrDepartment(), 1500));
         //Reina,Brian,Frank
