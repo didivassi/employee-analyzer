@@ -37,7 +37,7 @@ public class EmployeeAnalyzer {
        return department
                .stream()
                //.sorted(Comparator.comparingInt(Employee::getAge))
-               .filter(employee -> employee.getAge()>= age)
+               .filter(employee -> employee.getAge()> age)
                .findFirst();
     }
 
