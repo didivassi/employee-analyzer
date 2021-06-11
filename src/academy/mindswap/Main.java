@@ -10,9 +10,9 @@ public class Main {
     public static void main(String[] args) {
 
         EmployeeAnalyzer analyzer = new EmployeeAnalyzer();
-        //7
+        //4
         int year = Year.now().getValue();
-        System.out.println(analyzer.countEmployeesByWorkAge(DB.getHrDepartment(), year, 4));
+        System.out.println(analyzer.countEmployeesByWorkAgeMoreThan(DB.getHrDepartment(), year, 4));
         //Reina Hopkins
         System.out.println(analyzer.getEmployeesNameBySalaryAboveOrEqual(DB.getHrDepartment(), 1500));
         //Reina,Brian,Frank

@@ -10,10 +10,10 @@ import java.util.stream.Collectors;
 
 public class EmployeeAnalyzer {
 
-    public int countEmployeesByWorkAge(List<Employee> department, int tillYear, int numberOfYears){
+    public int countEmployeesByWorkAgeMoreThan(List<Employee> department, int tillYear, int numberOfYears){
         return (int) department
                 .stream()
-                .filter(employee -> tillYear-employee.getStartingYear()>= numberOfYears)
+                .filter(employee -> tillYear-employee.getStartingYear()> numberOfYears)
                 .count();
     }
 
