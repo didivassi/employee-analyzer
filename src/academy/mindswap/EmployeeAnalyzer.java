@@ -1,6 +1,7 @@
 package academy.mindswap;
 
 import academy.mindswap.employee.Employee;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Comparator;
 import java.util.List;
@@ -10,14 +11,14 @@ import java.util.stream.Collectors;
 
 public class EmployeeAnalyzer {
 
-    public int countEmployeesByWorkAgeMoreThan(List<Employee> department, int tillYear, int numberOfYears){
+    public int countEmployeesByWorkAgeMoreThan(@NotNull List<Employee> department, int tillYear, int numberOfYears){
         return (int) department
                 .stream()
                 .filter(employee -> tillYear-employee.getStartingYear()> numberOfYears)
                 .count();
     }
 
-    public List<String> getEmployeesNameBySalaryAboveOrEqual(List<Employee> department, int salaryFrom){
+    public List<String> getEmployeesNameBySalaryAboveOrEqual(@NotNull List<Employee> department, int salaryFrom){
         return department
                 .stream()
                 .filter(employee -> employee.getSalary()>= salaryFrom)
@@ -25,7 +26,7 @@ public class EmployeeAnalyzer {
                 .collect(Collectors.toList());
     }
 
-    public List<Employee> getOldestNEmployees(List<Employee> department, int n){
+    public List<Employee> getOldestNEmployees(@NotNull List<Employee> department, int n){
         return department
                 .stream()
                 .sorted(Comparator.comparingInt(Employee::getAge).reversed())
@@ -33,7 +34,7 @@ public class EmployeeAnalyzer {
                 .collect(Collectors.toList());
     }
 
-    public Optional<Employee> getFirstEmployeeOlderThan(List<Employee> department, int age){
+    public Optional<Employee> getFirstEmployeeOlderThan(@NotNull List<Employee> department, int age){
        return department
                .stream()
                //.sorted(Comparator.comparingInt(Employee::getAge))
@@ -41,7 +42,7 @@ public class EmployeeAnalyzer {
                .findFirst();
     }
 
-    public double getAverageSalary(List<Employee> department){
+    public double getAverageSalary(@NotNull List<Employee> department){
         return department
                 .stream()
                 .mapToDouble(Employee::getSalary)
@@ -49,7 +50,7 @@ public class EmployeeAnalyzer {
                 .orElse(Double.NaN);
     }
 
-    public Set<String> findCommonNamesInDepartments(List<Employee> department, List<Employee> department2){
+    public Set<String> findCommonNamesInDepartments(@NotNull List<Employee> department, @NotNull List<Employee> department2){
         Set<String> department2Names=department2.stream().map(Employee::getFirstName).collect(Collectors.toSet());
         return department
                 .stream()
