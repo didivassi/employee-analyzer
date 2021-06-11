@@ -5,6 +5,7 @@ import academy.mindswap.employee.Employee;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class EmployeeAnalyzer {
@@ -48,14 +49,13 @@ public class EmployeeAnalyzer {
                 .orElse(Double.NaN);
     }
 
-    public List<String> findCommonNamesInDepartments(List<Employee> department, List<Employee> department2){
-        List<String> department2Names=department2.stream().map(Employee::getFirstName).collect(Collectors.toList());
+    public Set<String> findCommonNamesInDepartments(List<Employee> department, List<Employee> department2){
+        Set<String> department2Names=department2.stream().map(Employee::getFirstName).collect(Collectors.toSet());
         return department
                 .stream()
                 .map(Employee::getFirstName)
                 .filter(employee ->  department2Names.contains(employee))
-                .distinct()
-                .collect(Collectors.toList());
+                .collect(Collectors.toSet());
 
     }
 
