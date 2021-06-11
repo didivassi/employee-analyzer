@@ -51,7 +51,11 @@ public class EmployeeAnalyzer {
     }
 
     public Set<String> findCommonNamesInDepartments(@NotNull List<Employee> department, @NotNull List<Employee> department2){
-        Set<String> department2Names=department2.stream().map(Employee::getFirstName).collect(Collectors.toSet());
+        Set<String> department2Names=department2
+                .stream()
+                .map(Employee::getFirstName)
+                .collect(Collectors.toSet());
+
         return department
                 .stream()
                 .map(Employee::getFirstName)
