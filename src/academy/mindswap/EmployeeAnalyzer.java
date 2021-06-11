@@ -21,7 +21,7 @@ public class EmployeeAnalyzer {
     public List<String> getEmployeesNameBySalaryAboveOrEqual(@NotNull List<Employee> department, int salaryFrom){
         return department
                 .stream()
-                .filter(employee -> employee.getSalary()>= salaryFrom)
+                .filter(employee -> employee.getSalary() >= salaryFrom)
                 .map(employee ->  employee.getFirstName()  + " " + employee.getLastname())
                 .collect(Collectors.toList());
     }
