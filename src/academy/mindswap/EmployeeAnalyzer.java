@@ -54,7 +54,7 @@ public class EmployeeAnalyzer {
         return department
                 .stream()
                 .map(Employee::getFirstName)
-                .filter(employee ->  department2Names.contains(employee))
+                .filter(department2Names::contains)
                 .collect(Collectors.toSet());
 
     }
