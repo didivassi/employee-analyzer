@@ -1,9 +1,7 @@
 package academy.mindswap;
 
 import academy.mindswap.db.DB;
-import academy.mindswap.employee.Employee;
 
-import java.util.Date;
 
 public class Main {
 
