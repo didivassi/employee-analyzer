@@ -14,7 +14,7 @@ public class EmployeeAnalyzer {
     public int countEmployeesByWorkAgeMoreThan(@NotNull List<Employee> department, int tillYear, int numberOfYears){
         return (int) department
                 .stream()
-                .filter(employee -> tillYear-employee.getStartingYear()> numberOfYears)
+                .filter(employee -> tillYear - employee.getStartingYear() > numberOfYears)
                 .count();
     }
 
@@ -38,7 +38,7 @@ public class EmployeeAnalyzer {
        return department
                .stream()
                //.sorted(Comparator.comparingInt(Employee::getAge))
-               .filter(employee -> employee.getAge()> age)
+               .filter(employee -> employee.getAge() > age)
                .findFirst();
     }
 
